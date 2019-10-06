@@ -26,3 +26,16 @@ By following Test-Driven Development (TDD), I can test the application without t
 
 ![alt text][image1]
 
+#### The HAL interfaces
+* GPIO
+* AdcDriver
+
+#### The OSAL interfaces
+* TimeService
+* Socket
+
+The core logic was implemented in a state machine as depicted below:
+
+![alt text][image2]
+
+
