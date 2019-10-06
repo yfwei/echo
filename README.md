@@ -38,4 +38,12 @@ The core logic was implemented in a state machine as depicted below:
 
 ![alt text][image2]
 
+# How to Build and Run
+1. Install cmake and cpputest: `sudo apt install cmake cpputest`
+1. Clone this repo.
+2. Make a build directory: `mkdir build && cd build`
+3. Compile: `cmake .. && make`
+4. Run the test server: `./bin/echo_server`
+5. Open another terminal to run the client: `./bin/echo_client`
 
+Please note that the above instructions are only verified on my Ubuntu 18.04 machine.
