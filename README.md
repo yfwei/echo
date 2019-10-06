@@ -14,3 +14,8 @@ An embedded C application sends counter to a remote server and expects the serve
 4. If the battery voltage drops to 3.5V, blink the red LED at a frequency of 2Hz with a 25% duty cycle, turn off the write LED, cease any communication and reset the counter.
 5. if the battery voltage rises back to 3.5, turn off the red LED and start responding to the button.
 
+# Design
+
+By following Test-Driven Development (TDD), I can test the application without using the target hardware and the target OS. As you can see in the following image, I introduced several interfaces as Operating System Abstraction Layer (OSAL) and Hardware Abstraction Layer (HAL):
+
+
