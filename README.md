@@ -22,7 +22,7 @@ An embedded C application sends counter to a remote server and expects the serve
 
 # Design
 
-By following Test-Driven Development (TDD), I can test the application without the target hardware and the target OS. As you can see in the following image, I introduced several interfaces as Operating System Abstraction Layer (OSAL) and Hardware Abstraction Layer (HAL):
+By following Test-Driven Development (TDD), I can test the application without the target hardware and the target OS. As you can see in the following figure, I introduced several interfaces as Operating System Abstraction Layer (OSAL) and Hardware Abstraction Layer (HAL):
 
 ![alt text][image1]
 
@@ -34,9 +34,15 @@ By following Test-Driven Development (TDD), I can test the application without t
 * TimeService
 * Socket
 
+### Communication
+The communication with the remote server is implemented in the [PingClient](src/PingClient.c) module. It uses the [Socket](include/Socket.h) interface to create/write/read a platform-independent datagram (UDP) socket. Although only the Linux platform is supported at the moment, it should not be hard to support other platforms.
+
+### State Machine
 The core logic was implemented in a state machine as depicted below:
 
 ![alt text][image2]
+
+The [state machine](src/StateMachine.c) only knows the high-level concepts from the [Hal](src/Hal.c) moudle. It does not need to know any low-level details, such as GPIO or ADC, to do its job.
 
 # How to Build and Run
 1. Install cmake and cpputest: `sudo apt install cmake cpputest`
