@@ -6,6 +6,12 @@ An embedded C application sends counter to a remote server and expects the serve
 * A button used to start the communication
 * A battery monitor to read battery voltage
 
+[//]: # (Image References)
+
+[image1]: ./images/class_diagram.png "Class Diagram"
+[image2]: ./images/state_machine.png "State Machine"
+
+
 # System Requirements
 
 1. When the user presses the button, turn on the white LED and start sending 2-Byte counter to the remote server every second and the counter value starts with 0.
@@ -16,6 +22,7 @@ An embedded C application sends counter to a remote server and expects the serve
 
 # Design
 
-By following Test-Driven Development (TDD), I can test the application without using the target hardware and the target OS. As you can see in the following image, I introduced several interfaces as Operating System Abstraction Layer (OSAL) and Hardware Abstraction Layer (HAL):
+By following Test-Driven Development (TDD), I can test the application without the target hardware and the target OS. As you can see in the following image, I introduced several interfaces as Operating System Abstraction Layer (OSAL) and Hardware Abstraction Layer (HAL):
 
+![alt text][image1]
 
